@@ -21,7 +21,7 @@ else:
     sheetInExcel = pd.ExcelFile(uploaded_file).sheet_names
     sheetInExcel.insert(0,'Chọn sheet')
     sheetName = st.selectbox('Lựa chọn sheet cần xuất file điểm', sheetInExcel)
-    doc = DocxTemplate(absolute_path + "\\" + "Finaltest_mau.docx")
+    doc = DocxTemplate(absolute_path + "/" + "Finaltest_mau.docx")
     df = pd.read_excel(uploaded_file, sheet_name=sheetName).fillna('')
     st.write(df)
     if st.button('Export PDF'):
